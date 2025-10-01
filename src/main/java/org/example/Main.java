@@ -82,7 +82,7 @@ public class Main {
                     // 向批次添加行
                     // 例如：构造每条 event 的内容（保证ASCII）
                     String baseBody = "event_" + row + "_" + System.currentTimeMillis();
-                    String eventBody = to1KBAscii(baseBody);
+                    String eventBody = to10KBAscii(baseBody);
                     table.addRow(
                             System.currentTimeMillis(), // ts
                             "192.168.1." + (row % 256), // ip
