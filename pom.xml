@@ -13,15 +13,33 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
+  <dependencies>
         <dependency>
             <groupId>io.greptime</groupId>
             <artifactId>ingester-all</artifactId>
             <version>0.15.0</version>
         </dependency>
 
+        <!-- Zstandard compression for request bodies -->
+        <dependency>
+            <groupId>com.github.luben</groupId>
+            <artifactId>zstd-jni</artifactId>
+            <version>1.5.6-10</version>
+        </dependency>
 
-    </dependencies>
+
+    <!-- Apache Arrow for columnar, off-heap capable payload construction -->
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-vector</artifactId>
+      <version>14.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-core</artifactId>
+      <version>14.0.2</version>
+    </dependency>
+  </dependencies>
     <build>
         <plugins>
             <!-- shaded plugin -->
